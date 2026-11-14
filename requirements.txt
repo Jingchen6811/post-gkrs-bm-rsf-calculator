@@ -1,0 +1,10 @@
+# Dependencies for deploying the Post-GKRS Brain Metastasis RSF Survival Web Calculator
+# Local launch: streamlit run web_calculator/app.py
+# Streamlit Community Cloud: set Main file path = web_calculator/app.py
+streamlit>=1.38.0
+numpy>=2.0.0
+pandas>=2.2.0
+scikit-learn>=1.5.0
+scikit-survival>=0.23.0
+joblib>=1.4.0
+matplotlib>=3.9.0
