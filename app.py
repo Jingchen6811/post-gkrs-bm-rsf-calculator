@@ -394,8 +394,8 @@ pill_txt = (
 shap_df = pred["shap_df"]
 prot_rows = shap_df[shap_df["SHAP"] < 0].head(3)
 elev_rows = shap_df[shap_df["SHAP"] > 0].head(2)
-prot_str = ", ".join(f"{r['Clinical_label']} ({r['SHAP']:+.3f})" for _, r in prot_rows.iterrows()) or "None"
-elev_str = ", ".join(f"{r['Clinical_label']} ({r['SHAP']:+.3f})" for _, r in elev_rows.iterrows()) or "None"
+prot_str = "; ".join(f"{r['Clinical_label']}: {r['Formatted_value']} [{r['SHAP']:+.3f}]" for _, r in prot_rows.iterrows()) or "None"
+elev_str = "; ".join(f"{r['Clinical_label']}: {r['Formatted_value']} [{r['SHAP']:+.3f}]" for _, r in elev_rows.iterrows()) or "None"
 
 with col_out:
     st.markdown('<div class="section-hdr">Predicted Overall Survival &amp; Individualized Risk Profile</div>', unsafe_allow_html=True)
